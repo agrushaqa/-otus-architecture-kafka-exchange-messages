@@ -23,7 +23,7 @@ def get_operation_info():
 def get_first_operation_first_object():
     return {"game_id": 1, "object_id": 1, "operation_id": 1,
             "args": {"x": 5, "y": 7},
-            "data": datetime.now(),
+            # "data": datetime.now(),
             "json_version": 1
             }
 

@@ -45,10 +45,16 @@ if __name__ == "__main__":
                                                game_id,
                                                ball_object_id,
                                                movable1.get_velocity)
-        operation_id = ioc.resolve("Operation.get_entity",
+        set_position_operation = ioc.resolve("Operation.get_entity",
                                    f'{json_dict["game_id"]}.'
                                    f'{json_dict["object_id"]}.'
                                    f'{json_dict["operation_id"]}'
                                    ".operation_id").execute()
-        print(operation_id(mytask_args))
-        # print("Registered User = {}".format(json.loads(msg.value)))
+        set_position_operation(mytask_args)
+        get_position_operation = ioc.resolve("Operation.get_entity",
+                                   f'{json_dict["game_id"]}.'
+                                   f'{json_dict["object_id"]}.'
+                                   f'{get_position_id}'
+                                   ".operation_id").execute()
+        get_position_operation()
+        print(get_position_operation())
